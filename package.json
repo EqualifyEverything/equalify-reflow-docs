@@ -1,13 +1,13 @@
 {
-  "name": "website",
+  "name": "equalify-pdf-converter-docs",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/UIC-OSF/website.git"
+    "url": "https://github.com/dylan-isaac/equalify-pdf-converter-docs.git"
   },
-  "homepage": "https://uic-osf.github.io/website/",
+  "homepage": "https://dylan-isaac.github.io/equalify-pdf-converter-docs/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -17,16 +17,24 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",
+    "highlight.js": "^11.11.1",
     "lucide-react": "^0.560.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.13.1",
+    "rehype-highlight": "^7.0.2",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
+    "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^5.1.1",
     "autoprefixer": "^10.4.22",
     "eslint": "^9.39.1",
