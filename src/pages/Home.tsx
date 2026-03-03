@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { FileText, Shield, Cpu, BookOpen, ArrowRight } from 'lucide-react';
-import reflowIcon from '../assets/equalify-reflow-icon.svg';
 import reflowIconPng from '../assets/equalify-reflow-icon.png';
 
 export const Home = () => {
