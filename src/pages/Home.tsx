@@ -55,7 +55,7 @@ export const Home = () => {
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
                         <StatCard value="200,000+" label="PDFs uploaded at UIC in 2023 alone" />
-                        <StatCard value="$5–35" label="per page for manual remediation" accent />
+                        <StatCard value="$5–12" label="per page for manual remediation" accent />
                         <StatCard value="$1M+" label="annual cost at even the cheapest rate" />
                     </div>
                 </div>
@@ -159,31 +159,26 @@ export const Home = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                         <div className="bg-white rounded-lg p-8 text-center">
                             <p className="text-sm text-gray-500 mb-2">Manual Remediation</p>
-                            <p className="text-4xl font-bold text-uic-red mb-2">$5–10 / page</p>
+                            <p className="text-4xl font-bold text-uic-red mb-2">$5–12 / page</p>
                             <p className="text-gray-600">= $1,000,000+ annually</p>
-                            <p className="text-sm text-gray-400 mt-2 italic">Recurring cost. Resets with every update.</p>
+                            <p className="text-sm text-gray-500 mt-2 italic">Recurring cost. Resets with every update.</p>
                         </div>
                         <div className="bg-white rounded-lg p-8 text-center">
                             <p className="text-sm text-gray-500 mb-2">Equalify Reflow</p>
                             <p className="text-4xl font-bold text-uic-blue mb-2">~$0.20 / page</p>
                             <p className="text-gray-600">= ~$40,000 annually</p>
-                            <p className="text-sm text-gray-400 mt-2 italic">Improves as models improve. Compounds.</p>
+                            <p className="text-sm text-gray-500 mt-2 italic">Improves as models improve. Compounds.</p>
                         </div>
                     </div>
                     <p className="text-center text-3xl font-bold text-cyan-300 mb-6">25x cost reduction</p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                        <div className="bg-white/10 rounded-lg p-6">
-                            <h3 className="font-bold mb-2">Pipeline Improves</h3>
-                            <p className="text-sm text-blue-100">
-                                Unlike manual remediation, the system improves as models improve. You're building infrastructure and accumulating semantic assets — not paying a cost that resets with every update.
-                            </p>
-                        </div>
-                        <div className="bg-white/10 rounded-lg p-6">
-                            <h3 className="font-bold mb-2">Enhance, Not Replace</h3>
-                            <p className="text-sm text-blue-100">
-                                Give your accessibility team superpowers. AI handles the 80% that's mechanical translation. Humans focus on quality assurance, edge cases, and the nuanced judgment that AI can't replace.
-                            </p>
-                        </div>
+                    <div className="text-center mt-2">
+                        <Link
+                            to="/docs/sources"
+                            className="inline-flex items-center gap-2 text-cyan-300 hover:text-white font-medium transition-colors text-sm"
+                        >
+                            See pricing sources
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -194,7 +189,7 @@ export const Home = () => {
                     <h2 className="text-3xl font-bold text-uic-blue text-center mb-4">Open Source</h2>
                     <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
                         Built in the open. Shaped by the community. Licensed under AGPL.<br />
-                        Supported by the UIC Technology Solutions Open Source Fund.
+                        Supported by the <a href="https://osf.it.uic.edu/" className="text-uic-blue underline hover:text-uic-red transition-colors">UIC Technology Solutions Open Source Fund</a>.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                         <PhaseCard
