@@ -15,6 +15,7 @@ export const docsNav: DocSection[] = [
     items: [
       { title: 'How It Works', path: '/docs/how-it-works', file: 'how-it-works' },
       { title: 'Getting Started', path: '/docs/getting-started', file: 'getting-started' },
+      { title: 'Sources', path: '/docs/sources', file: 'sources' },
     ],
   },
 ];
