@@ -71,6 +71,6 @@ The result is a reflowable, responsive document that adapts to any viewport, any
 
 ## Learn More
 
-For full technical details, see the [Architecture Reference](https://github.com/EqualifyEverything/equalify-pdf-converter/blob/main/docs/architecture.md) in the main repository.
+The source code is not yet publicly available. We are currently in the UIC pilot phase and plan to open-source the full project under the AGPL license.
 
-Browse the [source code](https://github.com/EqualifyEverything/equalify-pdf-converter) or check out the [project README](https://github.com/EqualifyEverything/equalify-pdf-converter#readme) for implementation status and quick start instructions.
+To learn more or request early access, visit the [Getting Started](#/docs/getting-started) guide or [sign up as a partner](#/partner).

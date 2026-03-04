@@ -31,14 +31,14 @@ export const Home = () => {
                             to="/docs/how-it-works"
                             className="inline-flex items-center gap-2 bg-uic-red hover:bg-uic-red/90 text-white px-6 py-3 rounded-lg font-medium transition-colors"
                         >
-                            <BookOpen className="w-5 h-5" />
+                            <BookOpen className="w-5 h-5" aria-hidden="true" />
                             How It Works
                         </Link>
                         <Link
                             to="/partner"
                             className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors border border-white/20"
                         >
-                            <Handshake className="w-5 h-5" />
+                            <Handshake className="w-5 h-5" aria-hidden="true" />
                             Become a Partner
                         </Link>
                     </div>
@@ -161,7 +161,7 @@ export const Home = () => {
                             className="inline-flex items-center gap-2 text-uic-red hover:text-uic-red/80 font-medium transition-colors"
                         >
                             Read the full technical overview
-                            <ArrowRight className="w-4 h-4" />
+                            <ArrowRight className="w-4 h-4" aria-hidden="true" />
                         </Link>
                     </div>
                 </div>
@@ -192,7 +192,7 @@ export const Home = () => {
                             className="inline-flex items-center gap-2 text-cyan-300 hover:text-white font-medium transition-colors text-sm"
                         >
                             See pricing sources
-                            <ArrowRight className="w-4 h-4" />
+                            <ArrowRight className="w-4 h-4" aria-hidden="true" />
                         </Link>
                     </div>
                 </div>
@@ -208,17 +208,17 @@ export const Home = () => {
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                         <PhaseCard
-                            icon={<Building2 className="w-7 h-7" />}
+                            icon={<Building2 className="w-7 h-7" aria-hidden="true" />}
                             title="Phase 1: UIC"
                             description="Tight feedback loops, real document collections, iterative improvement."
                         />
                         <PhaseCard
-                            icon={<Handshake className="w-7 h-7" />}
+                            icon={<Handshake className="w-7 h-7" aria-hidden="true" />}
                             title="Phase 2: Partners"
                             description="Early access, roadmap influence, pressure-testing across document types."
                         />
                         <PhaseCard
-                            icon={<Globe className="w-7 h-7" />}
+                            icon={<Globe className="w-7 h-7" aria-hidden="true" />}
                             title="Phase 3: Public"
                             description="AGPL license — adopt, run, improve, contribute back."
                         />
@@ -233,7 +233,7 @@ export const Home = () => {
                             className="inline-flex items-center gap-2 bg-uic-red hover:bg-uic-red/90 text-white px-6 py-3 rounded-lg font-medium transition-colors"
                         >
                             Sign Up for Early Access
-                            <ArrowRight className="w-4 h-4" />
+                            <ArrowRight className="w-4 h-4" aria-hidden="true" />
                         </Link>
                     </div>
                 </div>
