@@ -3,7 +3,6 @@ import {
     BookOpen,
     Building2,
     Eye,
-    Github,
     Globe,
     Handshake,
     Heading,
@@ -35,13 +34,13 @@ export const Home = () => {
                             <BookOpen className="w-5 h-5" />
                             How It Works
                         </Link>
-                        <a
-                            href="https://github.com/EqualifyEverything/equalify-pdf-converter"
+                        <Link
+                            to="/partner"
                             className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors border border-white/20"
                         >
-                            View on GitHub
-                            <ArrowRight className="w-4 h-4" />
-                        </a>
+                            <Handshake className="w-5 h-5" />
+                            Become a Partner
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -229,45 +228,17 @@ export const Home = () => {
                         <p className="text-blue-100 text-sm mb-4">
                             We need accessibility experts, institutions with real document collections, and practitioners who understand day-to-day remediation.
                         </p>
-                        <a
-                            href="https://it.uic.edu/profiles/blake-bertuccelli-booth/"
+                        <Link
+                            to="/partner"
                             className="inline-flex items-center gap-2 bg-uic-red hover:bg-uic-red/90 text-white px-6 py-3 rounded-lg font-medium transition-colors"
                         >
-                            Get in Touch
+                            Sign Up for Early Access
                             <ArrowRight className="w-4 h-4" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Project Ecosystem */}
-            <section className="py-16 bg-gray-50">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <h2 className="text-3xl font-bold text-uic-blue text-center mb-12">Project Ecosystem</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <RepoCard
-                            name="equalify-pdf-converter"
-                            description="Main backend — FastAPI pipeline that converts PDFs to semantic markdown. 1,100+ tests."
-                            href="https://github.com/EqualifyEverything/equalify-pdf-converter"
-                        />
-                        <RepoCard
-                            name="equalify-reflow-wp"
-                            description="WordPress plugin — serves converted documents with built-in viewer, TOC, and search."
-                            href="https://github.com/EqualifyEverything/equalify-reflow-wp"
-                        />
-                        <RepoCard
-                            name="equalify-reflow-feedback"
-                            description="Feedback service — collects user edits and issue reports with PDF document archival."
-                            href="https://github.com/EqualifyEverything/equalify-reflow-feedback"
-                        />
-                        <RepoCard
-                            name="equalify-reflow-docs"
-                            description="This documentation site — project overview and getting started guide."
-                            href="https://github.com/EqualifyEverything/equalify-reflow-docs"
-                        />
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };
@@ -288,7 +259,7 @@ const FormatCard = ({ title, subtitle, detail, className }: { title: string; sub
 );
 
 const PipelineCard = ({ icon, stage, title, description }: { icon: React.ReactNode; stage: string; title: string; description: string }) => (
-    <div className="text-center p-5 bg-gray-50 rounded-lg border border-gray-200">
+    <div className="text-center p-5 bg-gray-50 rounded-lg border border-gray-200 h-full">
         <div className="inline-flex items-center justify-center w-14 h-14 bg-uic-blue/10 text-uic-blue rounded-full mb-3">
             {icon}
         </div>
@@ -306,17 +277,4 @@ const PhaseCard = ({ icon, title, description }: { icon: React.ReactNode; title:
         <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
         <p className="text-sm text-gray-600">{description}</p>
     </div>
-);
-
-const RepoCard = ({ name, description, href }: { name: string; description: string; href: string }) => (
-    <a
-        href={href}
-        className="flex items-start gap-4 p-6 bg-white rounded-lg border border-gray-200 hover:border-uic-red/30 hover:shadow-md transition-all group"
-    >
-        <Github className="w-6 h-6 text-gray-400 group-hover:text-uic-red shrink-0 mt-0.5" />
-        <div>
-            <h3 className="font-bold text-gray-900 group-hover:text-uic-red mb-1">{name}</h3>
-            <p className="text-sm text-gray-600">{description}</p>
-        </div>
-    </a>
 );
