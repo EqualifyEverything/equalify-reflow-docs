@@ -9,6 +9,11 @@
     @apply antialiased text-gray-900 bg-white;
   }
 
+  /* Links */
+  .prose a {
+    @apply text-uic-blue underline;
+  }
+
   /* Inline code (not inside pre blocks) */
   .prose :not(pre) > code {
     @apply bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
