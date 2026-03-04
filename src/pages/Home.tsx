@@ -70,28 +70,34 @@ export const Home = () => {
                     </p>
 
                     {/* PDF → Markdown → HTML flow */}
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-12">
-                        <FormatCard
-                            title="PDF"
-                            subtitle="Visual-first"
-                            detail="Print fidelity"
-                            className="bg-uic-blue text-white"
-                        />
-                        <ArrowRight className="w-6 h-6 text-uic-red rotate-90 md:rotate-0 shrink-0" />
-                        <FormatCard
-                            title="Markdown"
-                            subtitle="Semantic"
-                            detail="Human-readable, open"
-                            className="bg-white text-gray-900 border-2 border-amber-400"
-                        />
-                        <ArrowRight className="w-6 h-6 text-uic-red rotate-90 md:rotate-0 shrink-0" />
-                        <FormatCard
-                            title="HTML"
-                            subtitle="Accessible by"
-                            detail="construction"
-                            className="bg-uic-blue text-white"
-                        />
-                    </div>
+                    <ol className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-12 list-none p-0 m-0">
+                        <li>
+                            <FormatCard
+                                title="PDF"
+                                subtitle="Visual-first"
+                                detail="Print fidelity"
+                                className="bg-uic-blue text-white"
+                            />
+                        </li>
+                        <ArrowRight className="w-6 h-6 text-uic-red rotate-90 md:rotate-0 shrink-0" aria-hidden="true" />
+                        <li>
+                            <FormatCard
+                                title="Markdown"
+                                subtitle="Semantic"
+                                detail="Human-readable, open"
+                                className="bg-white text-gray-900 border-2 border-amber-400"
+                            />
+                        </li>
+                        <ArrowRight className="w-6 h-6 text-uic-red rotate-90 md:rotate-0 shrink-0" aria-hidden="true" />
+                        <li>
+                            <FormatCard
+                                title="HTML"
+                                subtitle="Accessible by"
+                                detail="construction"
+                                className="bg-uic-blue text-white"
+                            />
+                        </li>
+                    </ol>
 
                     <div className="bg-white rounded-lg p-8 border border-gray-200 max-w-2xl mx-auto">
                         <p className="text-gray-700 text-center">
@@ -108,38 +114,48 @@ export const Home = () => {
                     <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
                         Five stages, from raw PDF to reflowable, accessible content.
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-                        <PipelineCard
-                            icon={<Scan className="w-7 h-7" />}
-                            stage="1"
-                            title="Docling Extraction"
-                            description="IBM Docling handles the first pass using smaller, efficient models. Produces a first-pass markdown covering text blocks, tables, images, and reading order — roughly 70% of the way there."
-                        />
-                        <PipelineCard
-                            icon={<Eye className="w-7 h-7" />}
-                            stage="2"
-                            title="Structure Analysis"
-                            description="Classifies the document type — poster, paper, syllabus — and flags key elements like columns, tables, and images. This context dynamically tunes how later stages process each page."
-                        />
-                        <PipelineCard
-                            icon={<Heading className="w-7 h-7" />}
-                            stage="3"
-                            title="Headings First"
-                            description="Heading hierarchy is the backbone of document accessibility. A dedicated pass infers heading levels from visual signals: size, weight, position, spacing."
-                        />
-                        <PipelineCard
-                            icon={<Users className="w-7 h-7" />}
-                            stage="4"
-                            title="The Translator"
-                            description="A multimodal LLM compares each visual page to its markdown and makes tool-call edits with reasoning. Alt text and table tasks spawn specialist sub-agents."
-                        />
-                        <PipelineCard
-                            icon={<Layout className="w-7 h-7" />}
-                            stage="5"
-                            title="Escape the Page"
-                            description="Merges all pages into one document. AI fixes boundary artifacts — split words, broken tables and lists — producing reflowable, responsive content."
-                        />
-                    </div>
+                    <ol className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto list-none p-0 m-0">
+                        <li>
+                            <PipelineCard
+                                icon={<Scan className="w-7 h-7" aria-hidden="true" />}
+                                stage="1"
+                                title="Docling Extraction"
+                                description="IBM Docling handles the first pass using smaller, efficient models. Produces a first-pass markdown covering text blocks, tables, images, and reading order — roughly 70% of the way there."
+                            />
+                        </li>
+                        <li>
+                            <PipelineCard
+                                icon={<Eye className="w-7 h-7" aria-hidden="true" />}
+                                stage="2"
+                                title="Structure Analysis"
+                                description="Classifies the document type — poster, paper, syllabus — and flags key elements like columns, tables, and images. This context dynamically tunes how later stages process each page."
+                            />
+                        </li>
+                        <li>
+                            <PipelineCard
+                                icon={<Heading className="w-7 h-7" aria-hidden="true" />}
+                                stage="3"
+                                title="Headings First"
+                                description="Heading hierarchy is the backbone of document accessibility. A dedicated pass infers heading levels from visual signals: size, weight, position, spacing."
+                            />
+                        </li>
+                        <li>
+                            <PipelineCard
+                                icon={<Users className="w-7 h-7" aria-hidden="true" />}
+                                stage="4"
+                                title="The Translator"
+                                description="A multimodal LLM compares each visual page to its markdown and makes tool-call edits with reasoning. Alt text and table tasks spawn specialist sub-agents."
+                            />
+                        </li>
+                        <li>
+                            <PipelineCard
+                                icon={<Layout className="w-7 h-7" aria-hidden="true" />}
+                                stage="5"
+                                title="Escape the Page"
+                                description="Merges all pages into one document. AI fixes boundary artifacts — split words, broken tables and lists — producing reflowable, responsive content."
+                            />
+                        </li>
+                    </ol>
                     <div className="text-center mt-8">
                         <Link
                             to="/docs/how-it-works"
