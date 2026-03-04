@@ -113,7 +113,7 @@ export const Home = () => {
                             icon={<Scan className="w-7 h-7" />}
                             stage="1"
                             title="Docling Extraction"
-                            description="Efficient initial extraction using smaller models. Handles text blocks, tables, images, reading order."
+                            description="IBM Docling handles the first pass using smaller, efficient models. Produces a first-pass markdown covering text blocks, tables, images, and reading order — roughly 70% of the way there."
                         />
                         <PipelineCard
                             icon={<Eye className="w-7 h-7" />}
@@ -125,7 +125,7 @@ export const Home = () => {
                             icon={<Heading className="w-7 h-7" />}
                             stage="3"
                             title="Headings First"
-                            description="Valid heading hierarchy as the backbone. Infers levels from visual signals: size, weight, position."
+                            description="Heading hierarchy is the backbone of document accessibility. A dedicated pass infers heading levels from visual signals: size, weight, position, spacing."
                         />
                         <PipelineCard
                             icon={<Users className="w-7 h-7" />}
