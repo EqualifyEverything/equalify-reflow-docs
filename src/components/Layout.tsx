@@ -147,7 +147,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                         </div>
                         <div>
                             <h3 className="font-bold text-uic-blue mb-4">Resources</h3>
-                            <ul className="space-y-2 text-sm text-gray-600">
+                            <ul className="space-y-2 text-sm text-gray-700">
                                 <li><a href="https://catalog.uic.edu/ucat/academic-calendar/" className="hover:underline">Academic Calendar</a></li>
                                 <li><a href="https://library.uic.edu/" className="hover:underline">Library</a></li>
                                 <li><a href="https://maps.uic.edu/" className="hover:underline">Maps</a></li>
@@ -157,7 +157,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                         </div>
                         <div>
                             <h3 className="font-bold text-uic-blue mb-4">Quick Links</h3>
-                            <ul className="space-y-2 text-sm text-gray-600">
+                            <ul className="space-y-2 text-sm text-gray-700">
                                 <li><a href="https://it.uic.edu/support/" className="hover:underline">Get Support</a></li>
                                 <li><a href="https://uic.edu/about/job-opportunities" className="hover:underline">Job Openings</a></li>
                                 <li><a href="https://emergency.uic.edu/" className="hover:underline">Emergency Information</a></li>
@@ -167,14 +167,14 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                         </div>
                         <div>
                             <h3 className="font-bold text-uic-blue mb-4">University</h3>
-                            <ul className="space-y-2 text-sm text-gray-600">
+                            <ul className="space-y-2 text-sm text-gray-700">
                                 <li><a href="https://www.uillinois.edu/" className="hover:underline">University of Illinois System</a></li>
                                 <li><a href="https://illinois.edu/" className="hover:underline">Urbana-Champaign</a></li>
                                 <li><a href="https://www.uis.edu/" className="hover:underline">Springfield</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div className="border-t border-gray-300 pt-8 text-center text-sm text-gray-500">
+                    <div className="border-t border-gray-300 pt-8 text-center text-sm text-gray-700">
                         &copy; {new Date().getFullYear()} The Board of Trustees of the University of Illinois  |  <a href="https://www.vpaa.uillinois.edu/resources/web_privacy" className="hover:underline">Privacy Statement</a>
                     </div>
                 </div>
