@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Search } from 'lucide-react';
 import uicLogo from '../assets/uic-logo.svg';
 
@@ -6,6 +7,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
+    const hamburgerButtonRef = useRef<HTMLButtonElement>(null);
+    const searchToggleRef = useRef<HTMLButtonElement>(null);
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
@@ -37,56 +40,69 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                             </a>
                             <div className="hidden md:block w-px h-10 bg-gray-300"></div>
                             <div className="hidden md:block">
-                                <a href="/" className="text-xl font-bold text-uic-blue hover:underline">
+                                <Link to="/" className="text-xl font-bold text-uic-blue hover:underline">
                                     Technology Solutions
-                                </a>
+                                </Link>
                             </div>
                         </div>
 
                         {/* Desktop Nav */}
-                        <nav className="hidden lg:flex items-center space-x-6" aria-label="Desktop navigation">
-                            <a href="https://it.uic.edu/services/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Services</a>
-                            <a href="https://it.uic.edu/support/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Support</a>
-                            <a href="https://it.uic.edu/researchers/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Research</a>
-                            <a href="https://it.uic.edu/learning/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Learning</a>
-                            <a href="https://it.uic.edu/security/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Security</a>
-                            <a href="https://it.uic.edu/accessibility/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Digital Accessibility</a>
-                            <a href="https://it.uic.edu/about/" className="text-sm font-medium text-gray-700 hover:text-uic-red">About</a>
+                        <nav aria-label="Desktop navigation">
+                            <ul className="hidden lg:flex items-center space-x-6 list-none">
+                                <li><a href="https://it.uic.edu/services/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Services</a></li>
+                                <li><a href="https://it.uic.edu/support/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Support</a></li>
+                                <li><a href="https://it.uic.edu/researchers/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Research</a></li>
+                                <li><a href="https://it.uic.edu/learning/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Learning</a></li>
+                                <li><a href="https://it.uic.edu/security/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Security</a></li>
+                                <li><a href="https://it.uic.edu/accessibility/" className="text-sm font-medium text-gray-700 hover:text-uic-red">Digital Accessibility</a></li>
+                                <li><a href="https://it.uic.edu/about/" className="text-sm font-medium text-gray-700 hover:text-uic-red">About</a></li>
 
-                            <div className="relative">
-                                <button
-                                    className="text-gray-600 hover:text-uic-red focus:outline-none"
-                                    onClick={() => setIsSearchOpen(!isSearchOpen)}
-                                    aria-label="Toggle search"
-                                    aria-expanded={isSearchOpen}
-                                >
-                                    <Search className="w-5 h-5" />
-                                </button>
-                                {isSearchOpen && (
-                                    <form
-                                        onSubmit={handleSearch}
-                                        className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl p-2 z-50 animate-in fade-in slide-in-from-top-2"
-                                    >
-                                        <input
-                                            type="text"
-                                            placeholder="Search..."
-                                            value={searchQuery}
-                                            onChange={(e) => setSearchQuery(e.target.value)}
-                                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-uic-red focus:border-transparent"
-                                            autoFocus
-                                            aria-label="Search"
-                                        />
-                                    </form>
-                                )}
-                            </div>
+                                <li>
+                                    <div className="relative">
+                                        <button
+                                            ref={searchToggleRef}
+                                            className="text-gray-600 hover:text-uic-red focus:outline-none focus:ring-2 focus:ring-uic-blue focus:ring-offset-2 rounded"
+                                            onClick={() => setIsSearchOpen(!isSearchOpen)}
+                                            aria-label="Toggle search"
+                                            aria-expanded={isSearchOpen}
+                                        >
+                                            <Search className="w-5 h-5" />
+                                        </button>
+                                        {isSearchOpen && (
+                                            <form
+                                                onSubmit={handleSearch}
+                                                className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl p-2 z-50 animate-in fade-in slide-in-from-top-2"
+                                            >
+                                                <input
+                                                    type="text"
+                                                    placeholder="Search..."
+                                                    value={searchQuery}
+                                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                                    onKeyDown={(e) => {
+                                                        if (e.key === 'Escape') {
+                                                            setIsSearchOpen(false);
+                                                            searchToggleRef.current?.focus();
+                                                        }
+                                                    }}
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-uic-red focus:border-transparent"
+                                                    autoFocus
+                                                    aria-label="Search"
+                                                />
+                                            </form>
+                                        )}
+                                    </div>
+                                </li>
+                            </ul>
                         </nav>
 
                         {/* Mobile Menu Button */}
                         <button
+                            ref={hamburgerButtonRef}
                             className="lg:hidden text-gray-600"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-label="Toggle menu"
                             aria-expanded={isMenuOpen}
+                            aria-controls="mobile-menu"
                         >
                             {isMenuOpen ? <X /> : <Menu />}
                         </button>
@@ -95,15 +111,27 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
                 {/* Mobile Nav */}
                 {isMenuOpen && (
-                    <nav className="lg:hidden bg-gray-50 border-t border-gray-200" aria-label="Mobile navigation">
+                    <nav
+                        id="mobile-menu"
+                        className="lg:hidden bg-gray-50 border-t border-gray-200"
+                        aria-label="Mobile navigation"
+                        onKeyDown={(e) => {
+                            if (e.key === 'Escape') {
+                                setIsMenuOpen(false);
+                                hamburgerButtonRef.current?.focus();
+                            }
+                        }}
+                    >
                         <div className="px-4 py-2 space-y-2">
-                            <a href="https://it.uic.edu/services/" className="block py-2 text-gray-700 hover:text-uic-red">Services</a>
-                            <a href="https://it.uic.edu/support/" className="block py-2 text-gray-700 hover:text-uic-red">Support</a>
-                            <a href="https://it.uic.edu/researchers/" className="block py-2 text-gray-700 hover:text-uic-red">Research</a>
-                            <a href="https://it.uic.edu/learning/" className="block py-2 text-gray-700 hover:text-uic-red">Learning</a>
-                            <a href="https://it.uic.edu/security/" className="block py-2 text-gray-700 hover:text-uic-red">Security</a>
-                            <a href="https://it.uic.edu/accessibility/" className="block py-2 text-gray-700 hover:text-uic-red">Digital Accessibility</a>
-                            <a href="https://it.uic.edu/about/" className="block py-2 text-gray-700 hover:text-uic-red">About</a>
+                            <ul className="list-none space-y-2">
+                                <li><a href="https://it.uic.edu/services/" className="block py-2 text-gray-700 hover:text-uic-red">Services</a></li>
+                                <li><a href="https://it.uic.edu/support/" className="block py-2 text-gray-700 hover:text-uic-red">Support</a></li>
+                                <li><a href="https://it.uic.edu/researchers/" className="block py-2 text-gray-700 hover:text-uic-red">Research</a></li>
+                                <li><a href="https://it.uic.edu/learning/" className="block py-2 text-gray-700 hover:text-uic-red">Learning</a></li>
+                                <li><a href="https://it.uic.edu/security/" className="block py-2 text-gray-700 hover:text-uic-red">Security</a></li>
+                                <li><a href="https://it.uic.edu/accessibility/" className="block py-2 text-gray-700 hover:text-uic-red">Digital Accessibility</a></li>
+                                <li><a href="https://it.uic.edu/about/" className="block py-2 text-gray-700 hover:text-uic-red">About</a></li>
+                            </ul>
                             <form onSubmit={handleSearch} className="py-2">
                                 <div className="relative">
                                     <input
@@ -114,7 +142,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                                         className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-uic-red"
                                         aria-label="Search"
                                     />
-                                    <button type="submit" className="absolute right-3 top-2.5 text-gray-400">
+                                    <button type="submit" className="absolute right-3 top-1.5 p-1 text-gray-400 focus:outline-none focus:ring-2 focus:ring-uic-blue rounded">
                                         <Search className="w-5 h-5" />
                                     </button>
                                 </div>
@@ -136,7 +164,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                         <div>
                             <img
                                 src={uicLogo}
-                                alt="UIC Logo"
+                                alt=""
                                 className="h-8 mb-4 opacity-80"
                             />
                             <p className="text-sm text-gray-600">
